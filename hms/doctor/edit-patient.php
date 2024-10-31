@@ -26,7 +26,7 @@ if (strlen($_SESSION['id']) == 0) {
             echo "<script>alert('Patient info updated Successfully');</script>";
             header('location:manage-patient.php');
         } else {
-            echo "<script>alert('Error updating patient info');</script>";
+            
         }
 
         // Close the statement
