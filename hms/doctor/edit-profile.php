@@ -2,23 +2,34 @@
 session_start();
 error_reporting(0);
 include('include/config.php');
-if(strlen($_SESSION['id']==0)) {
- header('location:logout.php');
-  } else{
-if(isset($_POST['submit']))
-{
-	$docspecialization=$_POST['Doctorspecialization'];
-$docname=$_POST['docname'];
-$docaddress=$_POST['clinicaddress'];
-$docfees=$_POST['docfees'];
-$doccontactno=$_POST['doccontact'];
-$docemail=$_POST['docemail'];
-$sql=mysqli_query($con,"Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$doccontactno' where id='".$_SESSION['id']."'");
-if($sql)
-{
-echo "<script>alert('Doctor Details updated Successfully');</script>";
 
-}
+if(strlen($_SESSION['id']) == 0) {
+    header('location:logout.php');
+} else {
+    if(isset($_POST['submit'])) {
+        $docspecialization = $_POST['Doctorspecialization'];
+        $docname = $_POST['docname'];
+        $docaddress = $_POST['clinicaddress'];
+        $docfees = $_POST['docfees'];
+        $doccontactno = $_POST['doccontact'];
+        $docemail = $_POST['docemail'];
+        
+        // Prepare the SQL statement to call the stored procedure
+        $stmt = $con->prepare("CALL UpdateDoctorDetails(?, ?, ?, ?, ?, ?)");
+        
+        // Bind the parameters
+        $stmt->bind_param("issdss", $_SESSION['id'], $docspecialization, $docname, $docaddress, $docfees, $doccontactno);
+        
+        // Execute the statement
+        if($stmt->execute()) {
+            echo "<script>alert('Doctor Details updated Successfully');</script>";
+        } else {
+            echo "<script>alert('Error updating doctor details');</script>";
+        }
+
+        // Close the statement
+        $stmt->close();
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -217,4 +228,4 @@ while($row=mysqli_fetch_array($ret))
 		<!-- end: CLIP-TWO JAVASCRIPTS -->
 	</body>
 </html>
-<?php } ?>
+<?php ?>
