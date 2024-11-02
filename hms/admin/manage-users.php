@@ -86,7 +86,7 @@ if(isset($_GET['del']))
 										</thead>
 										<tbody>
 <?php
-$sql=mysqli_query($con,"select * from users");
+$sql = mysqli_query($con, "SELECT * FROM users_view");
 $cnt=1;
 while($row=mysqli_fetch_array($sql))
 {
