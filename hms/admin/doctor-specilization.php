@@ -127,7 +127,7 @@ $_SESSION['msg']="data deleted !!";
 										</thead>
 										<tbody>
 <?php
-$sql=mysqli_query($con,"select * from doctorSpecilization");
+$sql = mysqli_query($con, "SELECT * FROM view_doctor_specialization");
 $cnt=1;
 while($row=mysqli_fetch_array($sql))
 {
