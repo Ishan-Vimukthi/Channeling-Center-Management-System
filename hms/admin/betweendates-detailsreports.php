@@ -82,7 +82,7 @@ while($row=mysqli_fetch_array($sql))
 {
 ?>
 <tr>
-<td class="center"><?php echo $cnt;?>.</td>
+<td class="center"><?php echo $cnt;?>.</td>sd
 <td class="hidden-xs"><?php echo $row['PatientName'];?></td>
 <td><?php echo $row['PatientContno'];?></td>
 <td><?php echo $row['PatientGender'];?></td>
