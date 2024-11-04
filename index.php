@@ -270,7 +270,7 @@ if (isset($_POST['submit'])) {
                 
             </div>
             <div class="col-sm-6 abut-yoiu">
-                <h3>About Our Hospital</h3>
+                <h3>About Our Channel Center</h3>
 <?php
 $ret=mysqli_query($con,"select * from tblpage where PageType='aboutus' ");
 while ($row=mysqli_fetch_array($ret)) {
@@ -427,7 +427,7 @@ while ($row=mysqli_fetch_array($ret)) {
     </footer>
     <div class="copy">
             <div class="container">
-         Hospital Management System
+         Channel Center Management System
                 
      
             </div>
