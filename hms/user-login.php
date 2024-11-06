@@ -1,6 +1,6 @@
 <?php session_start();
 error_reporting(0);
-include("include/config.php");sdsd
+include("include/config.php");
 if(isset($_POST['submit']))
 {
 $puname=$_POST['username'];	
