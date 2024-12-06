@@ -48,8 +48,5 @@ The project is live on InfinityFree hosting. Configuration includes a MySQL data
 - Advanced Database Techniques: Triggers, procedures, views, and indexing  
 - Version Control: GitHub  
 
-## Screenshots  
-*(Include screenshots of the UI and key functionalities if available.)*  
-
 ## Feedback and Contributions  
 Feel free to submit issues or feature requests through the repository. Contributions are always welcome!  
