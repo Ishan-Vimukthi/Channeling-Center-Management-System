@@ -12,7 +12,7 @@ The **Channeling Center Management System** is a web application designed to eff
 
 ## Technologies Used  
 ### Frontend  
-- HTML, CSS, JavaScript  
+- React, JavaScript  
 - Bootstrap for responsive and user-friendly design  
 
 ### Backend  
